@@ -1,15 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>DDR A3 DLL Modder</title>
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/dllpatcher.js"></script>
-        <script type="text/javascript">
+  <head>
+    <meta charset="utf-8" />
+    <title>DDR A3 DLL Modder</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- don't hate -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/FileSaver.min.js"></script>
+    <script type="text/javascript" src="js/dllpatcher.js"></script>
+    <script type="text/javascript">
         window.addEventListener("load", function () {
             new PatchContainer([
                 new Patcher("gamemdx.dll", "2022-06-20", [
-                    {
+										{
                         name: "Force enable fast/slow",
                         patches: [{ offset: 0xA6670, off: [0x8B, 0x41, 0x44], on: [0x31, 0xC0, 0x40] }],
                     },
@@ -677,51 +681,6 @@
                         ]
                     },
                     {
-                        type : "number",
-						            tooltip: "Enter timing window in miliseconds",
-                        name: "Timing Hack [MARVELOUS NOTES] (Sponsored by AQN)",
-                        offset : 0x32B72,
-                        size : 4,
-                        min : 1,
-                        max : 255,
-                    },
-                    {
-                        type : "number",
-						            tooltip: "Enter timing window in miliseconds",
-                        name: "Timing Hack [PERFECT NOTES] (Sponsored by AQN)",
-                        offset : 0x32B88,
-                        size : 4,
-                        min : 1,
-                        max : 255,
-                    },
-                    {
-                        type : "number",
-						            tooltip: "Enter timing window in miliseconds",
-                        name: "Timing Hack [GREAT NOTES] (Sponsored by AQN)",
-                        offset : 0x32B9E,
-                        size : 4,
-                        min : 1,
-                        max : 255,
-                    },
-                    {
-                        type : "number",
-						            tooltip: "Enter timing window in miliseconds",
-                        name: "Timing Hack [GOOD NOTES] (Sponsored by AQN)",
-                        offset : 0x32BB4,
-                        size : 4,
-                        min : 1,
-                        max : 255,
-                    },
-                    {
-                        type : "number",
-						            tooltip: "Enter timing window in miliseconds",
-                        name: "Timing Hack [BAD NOTES] (Sponsored by AQN)",
-                        offset : 0x32BCA,
-                        size : 4,
-                        min : 1,
-                        max : 255,
-                    },
-                    {
                         type : "union",
                         name : "Choose cabinet type timing offset. Set this to default for individual offsets below",
                         offset : 0x1E3D6,
@@ -830,8 +789,63 @@
                                 patch : [0x68, 0x01, 0x00, 0x00],
                             },
                         ]
-                    }
+                    },
                 ]),
+				new Patcher("gamemdx.dll", "2023-11-29", [
+                    {
+                        name: "Force enable fast/slow",
+                        patches: [{ offset: 0xDF650, off: [0x8B, 0x41, 0x44], on: [0x31, 0xC0, 0x40] }],
+                    },
+                    {
+                        name: "Force background judgement",
+                        patches: [{ offset: 0xDF630, off: [0x8B, 0x41], on: [0x31, 0xC0] }],
+                    },
+                    {
+                        name: "Force darkest background",
+                        patches: [{ offset: 0xE026E, off: [0x75, 0x03, 0x33, 0xC0], on: [0x33, 0xC0, 0xB0, 0x03] }],
+                    },
+                    {
+                        name: "Opaque background for darkest background option",
+                        tooltip: "This makes the darkest background option be 99% opaque, hiding the dancers and videos.",
+                        patches: [{ offset: 0x221BCC, off: [0x66, 0x66, 0x66], on: [0xA4, 0x70, 0x7D] }],
+                    },
+                    {
+                        name: "Timer Freeze",
+                        patches: [{ offset: 0x2A10B, off: [0x74], on: [0xEB] }],
+                    },
+                    
+                    {
+                        type : "union",
+                        name : "Fullscreen FPS Target",
+                        offset : 0x17F8,
+                        patches : [
+                            {
+                                name : "60 FPS",
+                                patch : [0x3C, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "120 FPS",
+                                patch : [0x78, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "144 FPS",
+                                patch : [0x90, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "165 FPS",
+                                patch : [0xA5, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "240 FPS",
+                                patch : [0xF0, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "360 FPS",
+                                patch : [0x68, 0x01, 0x00, 0x00],
+                            }
+                        ]
+                    }
+                ]),				
             ]);
         });
     </script>

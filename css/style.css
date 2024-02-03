@@ -15,10 +15,10 @@
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 50%;
+    height: 50;
     z-index: -1;
-    filter: blur(4px);
+    filter: blur(3px);
 }
         <div class="video-container">
             <video autoplay muted loop id="bgVideo">

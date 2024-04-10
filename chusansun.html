@@ -11,7 +11,7 @@
             new PatchContainer([
 
 // 2.10			
-                new Patcher("chusanApp.exe", "2.10.00", [
+                new Patcher("ChusanApp.exe", "(2.10.00) SUN", [
                     {
                         name: "Disable shop close lockout",
                         tooltip: "Disables ~12-8am lockout. Does not disable maint lockout from 6:30-7am JST",
@@ -118,7 +118,7 @@
                     ]),
 
 // 2.15
-                new Patcher("chusanApp.exe", "2.15.00 SUN PLUS", [
+                new Patcher("ChusanApp.exe", "(2.10.00) SUN PLUS", [
                     {
                         name: "Disable shop close lockout",
                         tooltip: "Disables ~12-8am lockout. Does not disable maint lockout from 6:30-7am JST",
@@ -224,7 +224,7 @@
                     ]),
 
 // 2.25
-                    new Patcher("chusanApp.exe", "1.25.00 INTERNATIONAL VER.", [
+                    new Patcher("ChusanApp.exe", "(2.25.00) INTERNATIONAL VER.", [
                         {
                             name: "Force shared audio mode, system audio samplerate must be 48000",
                             tooltip: "Improves compatibility but may increase latency",
@@ -284,7 +284,7 @@
 		<script type="text/javascript">
             window.addEventListener("load", function () {
 			new PatchContainer([
-                new Patcher("amdaemon.exe", "2.10.00", [
+                new Patcher("amdaemon.exe", "(2.10.00) SUN", [
                     {
                         name: "Replace error 6401 with no error",
                         danger: "[DEPRECATED] Sets all instances of error 6401 to 0",
@@ -295,7 +295,7 @@
                             ],
                         }
                     ]),
-                new Patcher("amdaemon.exe", "2.15.00 SUN PLUS", [
+                new Patcher("amdaemon.exe", "(2.15.00) SUN PLUS", [
                     {
                         name: "Replace error 6401 with no error",
                         tooltip: "Sets all instances of error 6401 to 0",

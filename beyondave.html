@@ -330,12 +330,77 @@
                             },
                             {
                                 name : "Shutter",
+                                patch : [0x04] },
+                        ]
+                    }
+                ]),
+                new Patcher("jubeat.dll", "2024-03-25", [
+                    {
+                        name: "Skip Tutorial",
+                        patches: [{ offset: 0xD7DBF, off: [0x0F, 0x85], on: [0x90, 0xE9] }],
+                    },
+                    {
+                        name: "Select Music Timer Freeze",
+                        patches: [{ offset: 0xC136F, off: [0x75], on: [0xEB] }],
+                    },
+                    {
+                        name: "Skip Category Select",
+                        patches: [{ offset: 0xC16FB, off: [0x04], on: [0x07] }],
+                    },
+                    {
+                        name: "Result Timer Freeze",
+                        tooltip: "Counts down to 0 then stops",
+                        patches: [{ offset: 0xA8DAB, off: [0x75], on: [0xEB] }],
+                    },
+                    {
+                        name: "Skip Online Matching",
+                        patches: [{ offset: 0xD3E6F, off: [0x0F, 0x84], on: [0x90, 0xE9] }],
+                    },
+                    {
+                        name: "Force Unlock All Markers",
+                        patches: [
+                            { offset: 0x4, off: [0x03], on: [0xEB] },
+                            { offset: 0x1B0B40, off: [0x75], on: [0xEB] },
+                            { offset: 0x1B0E2A, off: [0x0F, 0xB7, 0x45, 0xB0], on: [0x31, 0xC0, 0x90, 0x90] },
+                        ]
+                    },
+                    {
+                        name: "Force Unlock All Backgrounds",
+                        patches: [
+                            { offset: 0x13919E, off: [0x75], on: [0xEB] },
+                            { offset: 0x13947B, off: [0x0F, 0xB7, 0x45, 0xB0], on: [0x31, 0xC0, 0x90, 0x90] },
+                            { offset: 0x1674BB, off: [0x75], on: [0xEB] },
+                        ]
+                    },
+                    {
+                        name: "Force Enable Expert Option",
+                        patches: [{ offset: 0xDD1E0, off: [0x55, 0x8B, 0xEC], on: [0xB0, 0x01, 0xC3] }],
+                    },
+                    {
+                        type : "union",
+                        name : "Default Marker For Guest Play",
+                        offset : 0x5D117,
+                        patches : [
+                            {
+                                name : "Default",
+                                patch : [0x31],
+                            },
+                            {
+                                name : "Festo",
+                                patch : [0x2E],
+                            },
+                            {
+                                name : "Qubell",
+                                patch : [0x28],
+                            },
+                            {
+                                name : "Shutter",
                                 patch : [0x04] }],
-					},
+                    },
                 ]),
             ]);
             new PatchContainer([
-				new Patcher("music_db.dll", "2023-09-20, 2023-10-11", [
+                new Patcher("music_db.dll", "2023-09-20, 2023-10-11", [
                     {
                      name : "Unlock all songs",
                      patches : [{offset : 0x1EE5, off: [0x74, 0x0A], on : [0x90, 0x90] },
@@ -345,7 +410,14 @@
         new Patcher("music_db.dll", "2023-11-20, 2023-12-19, 2024-02-14", [
                     {
                      name : "Unlock all songs",
-                     patches : [{offset : 0x2135, off: [0x74, 0x0A], on : [0x90, 0x90],
+                     patches : [{offset : 0x2135, off: [0x74, 0x0A], on : [0x90, 0x90] },
+                        ]
+                    }
+                ]),
+        new Patcher("music_db.dll", "2024-03-25", [
+                    {
+                     name : "Unlock all songs",
+                     patches : [{offset : 0x22F5, off: [0x74, 0x0A], on : [0x90, 0x90],
                         }]
                     },
                 ]),

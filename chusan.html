@@ -72,10 +72,17 @@
                         tooltip: "Confirmed ineffective for chusanApp.",
                         patches: [
                             {offset: 0xB6B4F3, off: [0x74], on: [0xEB]},
-                        ],
-                    },
-                ]),
-                new Patcher("amdaemon.exe", "amdaemon@2.01.00", [
+                        ]
+                    }
+				]),
+                ]);
+            });
+        </script>
+
+		<script type="text/javascript">
+            window.addEventListener("load", function () {
+			new PatchContainer([
+                new Patcher("amdaemon.exe", "amdaemon 2.01.00", [
                     {
                         name: "ALLNet verbose",
                         tooltip: "(Dev Only) Force set two flags that enable dev logging",
@@ -91,10 +98,10 @@
                             {offset: 0x003BC0D7, off: [0x0F, 0x84], on: [0x90, 0xE9]},
                             {offset: 0x003BCCC7, off: [0x0F, 0x84], on: [0x90, 0xE9]},
                             {offset: 0x003BD2B7, off: [0x0F, 0x84], on: [0x90, 0xE9]},
-                        ]
-                    }
-                ])
-             ]);
+                      ]
+                }
+				]),
+                ]);
             });
         </script>
     </head>

@@ -4,11 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>CHUNITHM NEW Modder</title>
-		<link rel="shortcut icon" href="./img/favicon.png">
-        <link rel="stylesheet" href="css/style2.css">
-        <!-- don't hate -->
-        <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
-        <script type="text/javascript" src="js/FileSaver.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/dllpatcher.js"></script>
         <script type="text/javascript">
             function s2b(str) {
@@ -22,66 +18,58 @@
             new PatchContainer([
                 new Patcher("chusanApp.exe", "2.01.00", [
                     {
-                        name: "共享音频",
-                        tooltip: "禁用音频独占，没声音或者锁定最大音量可以试试",
+                        name: "Shared Audio",
+                        tooltip: "Try disabling audio exclusive mode if there's no sound or if the volume is locked at maximum.",
                         patches: [
                             {offset: 0xE78E3A, off: [0x01], on: [0x00]},
                         ],
                     },
                     {
-                        name: "双声道音频",
-                        tooltip: "开着吧，除非你有8声道喇叭（",
+                        name: "Stereo Audio",
+                        tooltip: "Keep it on unless you have an 8-channel speaker system (:",
                         patches: [
                             {offset: 0xE78F11, off: [0x75, 0x3F], on: [0x90, 0x90]},
                         ],
                     },
                     {
-                        name: "禁用显示器检测",
-                        tooltip: "120Hz开不起来的时候也许有用（？）",
+                        name: "Disable Monitor Detection",
+                        tooltip: "Might be useful when 120Hz doesn't work (？)",
                         patches: [
                             {offset: 0x01D813, off: [0x74, 0x3F], on: [0xEB, 0x2E]},
                         ],
                     },
                     {
-                        name: "无限选歌",
-                        tooltip: "不联网必备，联网请勿开",
+                        name: "Unlimited Song Selection",
+                        tooltip: "Essential for offline play, do not enable when online.",
                         patches: [
                             {offset: 0x96D4AB, off: [0x74], on: [0xEB]},
                         ],
                     },
                     {
-                        name: "关闭网络加密",
-                        tooltip: "现阶段EX/JiNET联网必选",
+                        name: "Disable Network Encryption",
+                        tooltip: "Currently necessary for EX/JiNET online play.",
                         patches: [
                             {offset: 0x1CDE628, off: [0xC8, 0x00, 0x00, 0x00, 0xC8, 0x00, 0x00, 0x00], on: [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]},
                         ]
                     },
                     {
-                        name: "关闭TLS",
-                        tooltip: "现阶段EX/JiNET联网必选",
+                        name: "Disable TLS",
+                        tooltip: "Currently necessary for EX/JiNET online play.",
                         patches: [
                             {offset: 0xE5C217, off: [0x80], on: [0x00]},
                         ]
                     },
                     {
-                        name: "AUTO PLAY",
-                        tooltip: "使用这个,你随便按按就能ap爱的供养（",
-                        patches: [
-                            {offset: 0x6E9145, off: [0x8a, 0x84, 0x24, 0x80, 0x00, 0x00, 0x00], on: [0xb0, 0x01, 0x90, 0x90, 0x90, 0x90, 0x90]},
-                            {offset: 0x92D2CE, off: [0x00], on: [0x01]},
-                        ]
-                    },
-                    {
-                        name: "屏蔽LED检查",
-                        tooltip: "无视837-15093不存在",
+                        name: "Disable LED Check",
+                        tooltip: "Ignore 837-15093 not found.",
                         patches: [
                             {offset: 0x940E1A, off: [0x01], on: [0x00]},
                             {offset: 0x940E1F, off: [0x00], on: [0x01]},
                         ],
                     },
                     {
-                        name: "关闭闭店功能",
-                        tooltip: "已确认对chusanApp无效",
+                        name: "Disable Shop Close Function",
+                        tooltip: "Confirmed ineffective for chusanApp.",
                         patches: [
                             {offset: 0xB6B4F3, off: [0x74], on: [0xEB]},
                         ],
@@ -112,6 +100,5 @@
     </head>
     <body>
         <h1>CHUNITHM NEW Modder</h1>
-		<h6><a href="./patchertop.html">BACK TO HOME</a></h6>
     </body>
 </html>

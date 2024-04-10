@@ -16,6 +16,7 @@
             }
             window.addEventListener("load", function () {
             new PatchContainer([
+// 2.01			
                 new Patcher("chusanApp.exe", "2.01.00", [
                     {
                         name: "Shared Audio",
@@ -72,11 +73,64 @@
                         tooltip: "Confirmed ineffective for chusanApp.",
                         patches: [
                             {offset: 0xB6B4F3, off: [0x74], on: [0xEB]},
+                            ],
+                        }
+                    ]),
+
+// 2.05
+                new Patcher("chusanApp.exe", "2.05.00", [
+                    {
+                        name: "Force shared audio mode, system audio samplerate must be 48000",
+                        tooltip: "Improves compatibility but may increase latency",
+                        patches: [
+                            {offset: 0xE95D2A, off: [0x01], on: [0x00]},
+                        ],
+                    },
+                    {
+                        name: "Force 2 channel audio output",
+                        patches: [
+                            {offset: 0xE95E01, off: [0x75, 0x3F], on: [0x90, 0x90]},
+                        ],
+                    },
+                    {
+                        name: "Disable Song Select Timer",
+                        patches: [
+                            {offset: 0x98455B, off: [0x74], on: [0xEB]},
+                        ],
+                    },
+                    {
+                        name: "No Encryption",
+                        tooltip: "Title server workaround",
+                        patches: [
+                            {offset: 0x1D10640, off: [0xCD, 0x00, 0x00, 0x00, 0xCD, 0x00, 0x00, 0x00], on: [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]},
+                        ]
+                    },
+                    {
+                        name: "No TLS",
+                        tooltip: "Title server workaround",
+                        patches: [
+                            {offset: 0xE78E37, off: [0x80], on: [0x00]},
+                        ]
+                    },
+                    {
+                        name: "Disable Display Check",
+                        tooltip: "Not recommended. Set DIPSW instead.",
+                        patches: [
+                            {offset: 0x01D813, off: [0x74, 0x3F], on: [0xEB, 0x2E]},
+                        ],
+                    },
+                    {
+                        name: "Dummy LED",
+                        tooltip: "Skip LED board check",
+                        patches: [
+                            {offset: 0x95790A, off: [0x01], on: [0x00]},
+                            {offset: 0x95790F, off: [0x00], on: [0x01]},
+                            {offset: 0x82164F, off: [0x7C], on: [0xEB]},
                         ]
                     }
 				]),
                 ]);
-            });
+            });						
         </script>
 
 		<script type="text/javascript">

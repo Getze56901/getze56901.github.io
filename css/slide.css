@@ -24,7 +24,7 @@ h2 {
     overflow: hidden;
 }
 
-ul, li {
+ul, {
     color: white;
     list-style: none;
 }
@@ -36,7 +36,7 @@ ul {
     animation: slide 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
 }
 
-li {
+h2 {
     position: absolute;
     height: 70px;
     top: 200%;
@@ -44,11 +44,11 @@ li {
     font-size: 45px;
 } 
 
-li:first-child {
+h2:first-child {
     top: 100%;
 }
 
-li:last-child {
+h2:last-child {
     top: 300%;
 }
 

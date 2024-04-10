@@ -19,14 +19,10 @@
             });
         </script>
     </head>
-        <div class="slide-text">
-        <h2>NEWS: 2024/04:</h2>
-        <div class="coutry">
-            <ul>
-                <li><b>-GITADORA Fuzz-Up Final/Galaxy Wave Patches is here now</li></b>
-                <li><b>-DDR A3 20240402 Patch is here now</li></b>
-                <li><b>-SDVX EX 20240402 Patch is here now</li></b>
-            </ul>
+    <h3>NEWS: 2024/04:</h3>
+<div id="scroll-container">
+  <div id="scroll-text"><b>GITADORA Fuzz-Up Final/Galaxy Wave Patches is here now/DDR A3 20240402 Patch is here now/SDVX EXCEED GEAR 20240402 Patch is here now</b><div>
+</div>
   </div>
     <body>
         <div class="video-container">
@@ -35,8 +31,6 @@
           </video>
         </div>
         <h1 style="color:black;">Pick a game!|¡Elige Un Juego!|ゲームを選んでください！</h1>
-        <p style="text-align:center"><span style="color:black;"><b>Thanks to the collaboration of the community, I collected all the patches that exist so far.</span></p></b>
-        <p style="text-align:center"><span style="color:black;"><b>This with the purpose of preserving and being able to update it in the future.</span></p></b>
         <div class="icons">
             <label for="check_beatstream" class="gameicon">
                 <img src="img/aaa_beatstream.png">
@@ -50,20 +44,33 @@
                 </a>
                 <a href="beatstream2.html" class="gameicon">
                     <img src="img/beatstream2.png">
-                    <div>BeatStream<br>アニムトライヴ</div>
-                </a>
-            </div>
+                <div>BeatStream<br>アニムトライヴ</div>
+            </a>
+        </div>
 
+        <label for="check_bishibashi" class="gameicon">
+            <img src="img/aaa_bishibashi.png">
+            <div>BishiBashi</div>
+        </label>
+        <input type="checkbox" id="check_bishibashi" class="sectionToggle" />
+        <div class="subsection">
             <a href="bishibashi.html" class="gameicon">
                 <img src="img/bishibashi.png">
                 <div>THE ☆ BishiBashi</div>
             </a>
-			
+        </div>
+
+        <label for="check_bombergirl" class="gameicon">
+            <img src="img/aaa_bomber.png">
+            <div>BomberGirl</div>
+        </label>
+        <input type="checkbox" id="check_bombergirl" class="sectionToggle" />
+        <div class="subsection">
             <a href="bombergirl.html" class="gameicon">
                 <img src="img/bombergirl.png">
                 <div>BomberGirl PC (eacloud)</div>
             </a>
-
+        </div>
             <label for="check_chuni" class="gameicon">
                 <img src="img/aaa_chuni.png">
                 <div>CHUNITHM</div>
@@ -75,7 +82,7 @@
                     <div>CHUNITHM</div>
                 </a>
                 <a href="chuniplus.html" class="gameicon">
-                    <img src="img/chuniplus.jpg">
+                    <img src="img/chuniplus.png">
                     <div>CHUNITHM PLUS</div>
                 </a>
                 <a href="chuniair.html" class="gameicon">
@@ -114,6 +121,10 @@
                     <img src="img/chusunplus.png">
                     <div>CHUNITHM SUN PLUS</div>
                 </a>
+               <a href="chusunplusint.html" class="gameicon">
+                <img src="img/chuni/chusunplusint.png">
+                <div>CHUNITHM SUN PLUS Intl.</div>
+                </a>                
                 <a href="chulumi.html" class="gameicon">
                     <img src="img/chulumi.png">
                     <div>CHUNITHM LUMINOUS</div>                                        
@@ -228,15 +239,29 @@
                 </a>				
             </div>
 
+        <label for="check_dancerush" class="gameicon">
+            <img src="img/aaa_dancerush.jpg">
+            <div>DANCERUSH</div>
+        </label>
+        <input type="checkbox" id="check_dancerush" class="sectionToggle" />
+        <div class="subsection">
             <a href="drs.html" class="gameicon">
                 <img src="img/drs.png">
                 <div>DANCERUSH STARDOM</div>
             </a>
+        </div>
 
+        <label for="check_gc4ex" class="gameicon">
+            <img src="img\aaa_gc4ex.png">
+            <div>Groove Coaster</div>
+        </label>
+        <input type="checkbox" id="check_gc4ex" class="sectionToggle" />
+        <div class="subsection">
             <a href="gc4ex.html" class="gameicon">
-                <img src="img/gc4ex.png">
+                <img src="img\gc4ex.png">
                 <div>Groove Coaster 4EX Infinity Highway</div>
             </a>
+        </div>
 
             <label for="check_gitadora" class="gameicon">
                 <img src="img/aaa_gitadora.png">
@@ -301,7 +326,7 @@
                     <div>GITADORA HIGH-VOLTAGE</div>
                 </a>
                 <a href="gitadorafuzzup.html" class="gameicon">
-                    <img src="img/fuzzup.jpg">
+                    <img src="img/fuzzup.">
                     <div>GITADORA Fuzz-Up</div>
                 </a>
                 <a href="gitadoragalaxywave.html" class="gameicon">
@@ -310,15 +335,29 @@
                 </a>					
             </div>
 
+        <label for="check_diva" class="gameicon">
+            <img src="img\aaa_diva.png">
+            <div>Hatsune Miku: Project DIVA Arcade</div>
+        </label>
+        <input type="checkbox" id="check_diva" class="sectionToggle" />
+        <div class="subsection">
             <a href="futuretone.html" class="gameicon">
                 <img src="img/futuretone.png">
                 <div>Hatsune Miku: Project DIVA Arcade Future Tone</div>
             </a>
+        </div>
 
+        <label for="check_idaz" class="gameicon">
+            <img src="img/aaa_initiald.png">
+            <div>Initial D Arcade</div>
+        </label>
+        <input type="checkbox" id="check_idaz" class="sectionToggle" />
+        <div class="subsection">
             <a href="initialdzero.html" class="gameicon">
                 <img src="img/idz.png">
                 <div>Initial D Arcade Stage Zero</div>
             </a>
+        </div>
 
             <label for="check_jubeat" class="gameicon">
                 <img src="img/aaa_jubeat.png">
@@ -372,20 +411,42 @@
                 </a>				
             </div>
 
+        <label for="check_kancolle" class="gameicon">
+            <img src="img/aaa_kancolle.png">
+            <div>Kancolle Arcade</div>
+        </label>
+        <input type="checkbox" id="check_kancolle" class="sectionToggle" />
+        <div class="subsection">
             <a href="kancolle.html" class="gameicon">
                 <img src="img/kancolle.png">
                 <div>Kancolle Arcade</div>
             </a>
+        </div>
 
+
+        <label for="check_fgo" class="gameicon">
+            <img src="img/aaa_fgo.jpg">
+            <div>Fate Grand/Order Arcade</div>
+        </label>
+        <input type="checkbox" id="check_fgo" class="sectionToggle" />
+        <div class="subsection">
             <a href="fgo.html" class="gameicon">
                 <img src="img/fgo.png">
-                <div>Fate Grand Order Arcade</div>
+                <div>Fate Grand/Order Arcade</div>
             </a>
+        </div>
 			
-            <a href="mercury.html" class="gameicon">
+        <label for="check_wacca" class="gameicon">
+            <img src="img/aaa_wacca.png">
+            <div>WACCA</div>
+        </label>
+        <input type="checkbox" id="check_wacca" class="sectionToggle" />
+        <div class="subsection">
+            <a href="waccareverse.html" class="gameicon">
                 <img src="img/mercury.png">
-                <div>WACCA Reverse</div>
+                <div>WACCA REVERSE</div>
             </a>
+        </div>
 			
             <label for="check_museca" class="gameicon">
                 <img src="img/aaa_museca.png">
@@ -527,14 +588,29 @@
                 </a>
             </div>
 
-            <a href="taikonotatsujin.html" class="gameicon">
+        <label for="check_taiko" class="gameicon">
+            <img src="img/aaa_taiko.png">
+            <div>Taiko no Tatsujin</div>
+        </label>
+        <input type="checkbox" id="check_taiko" class="sectionToggle" />
+        <div class="subsection">
+            <a href="nijiiro.html" class="gameicon">
                 <img src="img/taikonotatsujin.jpg">
-                <div>Taiko no Tatsujin</div>				
+                <div>Taiko no Tatsujin Nijiiro Ver.</div>
             </a>
+        </div>
+
+        <label for="check_synchronica" class="gameicon">
+            <img src="img/aaa_synchronica.png">
+            <div>Synchronica</div>
+        </label>
+        <input type="checkbox" id="check_synchronica" class="sectionToggle" />
+        <div class="subsection">
             <a href="synchronica.html" class="gameicon">
                 <img src="img/synchronica.jpg">
                 <div>Synchronica</div>
-            </a>			
+            </a>
+        </div>			
         </div>
     <div class="tagline"><span style="color:white;">All rights reserved to their respective owners.</span></a></div>
     <div class="tagline"><span style="color:magenta;">BG THEME:<span style="color:lightskyblue;">BUDDIES<span style="color:yellow;">PLUS</span></a></div>

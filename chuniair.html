@@ -2,14 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CHUNITHM AIR Modder</title>
+        <title>CHUNITHM AIR/AIR PLUS Modder</title>
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/dllpatcher.js"></script>
         <script type="text/javascript">
             window.addEventListener("load", function () {
 			new PatchContainer([
 
-//AIR
+                //AIR
                 new Patcher("chuniApp.exe", "(1.10.00) AIR", [
                     {
                         // mon AIR
@@ -43,14 +43,6 @@
                         ],
                     },
                     {
-                        name: "Patch for Windows 7",
-                        tooltip: "May not be able to connect to the server",
-                        patches: [
-                            {offset: 0x17fd7c4, off: [0x45, 0x78], on: [0x5F, 0x41]},
-                            {offset: 0x17fd7cd, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
-                        ],
-                    },
-                    {
                         // lybxlpsv AIR
                         name: "Disable Song Select Timer",
                         tooltip: "May only work when playing with card.",
@@ -72,10 +64,18 @@
                         patches: [
                             {offset: 0x410293, off: [0x01], on: [0x00]},
                         ]
+                    },
+                    {
+                        name: "Patch for Windows 7",
+                        danger: "May not be able to connect to the server",
+                        patches: [
+                            {offset: 0x17fd7c4, off: [0x45, 0x78], on: [0x5F, 0x41]},
+                            {offset: 0x17fd7cd, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
+                        ]
                     }
                 ]),
 
-//AIR PLUS
+                //AIR PLUS
                 new Patcher("chuniApp.exe", "(1.15.00) AIR PLUS", [
                     {
                         // mon AIRPLUS
@@ -109,14 +109,6 @@
                         ],
                     },
                     {
-                        name: "Patch for Windows 7",
-                        tooltip: "May not be able to connect to the server",
-                        patches: [
-                            {offset: 0x1892050, off: [0x45, 0x78], on: [0x5F, 0x41]},
-                            {offset: 0x1892059, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
-                        ],
-                    },
-                    {
                         // lybxlpsv AIRPLUS
                         name: "Disable Song Select Timer",
                         tooltip: "May only work when playing with card.",
@@ -138,6 +130,14 @@
                         patches: [
                             {offset: 0x41F843, off: [0x01], on: [0x00]},
                         ]
+                    },
+                    {
+                        name: "Patch for Windows 7",
+                        danger: "May not be able to connect to the server",
+                        patches: [
+                            {offset: 0x1892050, off: [0x45, 0x78], on: [0x5F, 0x41]},
+                            {offset: 0x1892059, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
+                        ]
                     }
                 ]),
                 ]);
@@ -148,9 +148,9 @@
             window.addEventListener("load", function () {
 			new PatchContainer([
 
-//AIR&AIRPLUS
-                new Patcher("aimeReaderHost.exe", "(1.10.00) AIR & (1.15.00) AIR PLUS", [
-				{
+//AIR
+                new Patcher("aimeReaderHost.exe", "(1.10.00) AIR", [
+                {
                       name: "Change domain obfuscation to be compatible with segatools",
                       tooltip: "(Scene Release Only) Patches 'aime.anbzvarg.wc' to 'nvzr.anbzvarg.wc' for Aime server check to work correctly.",
                       patches: [
@@ -158,11 +158,22 @@
                       ]
                 }
                 ]),
-                ]);
+
+//AIR PLUS
+                new Patcher("aimeReaderHost.exe", "(1.15.00) AIR PLUS", [
+                {
+                      name: "Change domain obfuscation to be compatible with segatools",
+                      tooltip: "(Scene Release Only) Patches 'aime.anbzvarg.wc' to 'nvzr.anbzvarg.wc' for Aime server check to work correctly.",
+                      patches: [
+                          {offset: 0xA83C4, off: [0x61, 0x69, 0x6D, 0x65, 0x2E, 0x61, 0x6E, 0x62, 0x7A, 0x76, 0x61, 0x72, 0x67, 0x2E, 0x77, 0x63], on: [0x6E, 0x76, 0x7A, 0x72, 0x2E, 0x61, 0x6E, 0x62, 0x7A, 0x76, 0x61, 0x72, 0x67, 0x2E, 0x77, 0x63]},
+                      ]
+                }
+                ]),
+			]);
             });
         </script>
     </head>
     <body>
-        <h1>CHUNITHM AIR Modder</h1>
+        <h1>CHUNITHM AIR / AIR PLUS Modder</h1>
     </body>
 </html>

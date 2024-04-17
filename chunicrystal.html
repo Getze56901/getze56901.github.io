@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CHUNITHM CRYSTAL Modder</title>
+        <title>CHUNITHM CRYSTAL/CRYSTAL PLUS Modder</title>
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/dllpatcher.js"></script>
         <script type="text/javascript">
@@ -34,14 +34,6 @@
                             name: "Force 2 channel audio output",
                             patches: [
                                 {offset: 0xCD47E1, off: [0x75, 0x3F], on: [0x90, 0x90]},
-                            ],
-                        },
-                        {
-                            name: "Patch for Windows 7",
-                            tooltip: "May not be able to connect to the server",
-                            patches: [
-                                {offset: 0x1A404E8, off: [0x45, 0x78], on: [0x5F, 0x41]},
-                                {offset: 0x1A404F1, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
                             ],
                         },
                         {
@@ -80,9 +72,17 @@
                             ],
                         },
                         {
+                            name: "Patch for Windows 7",
+                            danger: "May not be able to connect to the server",
+                            patches: [
+                                {offset: 0x1A404E8, off: [0x45, 0x78], on: [0x5F, 0x41]},
+                                {offset: 0x1A404F1, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
+                            ],
+                        },
+                        {
                             // ikaros14
                             name: "Dummy LED",
-                            tooltip: "Skip LED board check",
+                            danger: "[DEPRECATED] Skip LED board check",
                             patches: [
                                 {offset: 0x2499D7, off: [0x00], on: [0x01]},
                             ],
@@ -152,14 +152,6 @@
                             ],
                         },
                         {
-                            // ikaros14
-                            name: "Dummy LED",
-                            tooltip: "Skip LED board check",
-                            patches: [
-                                {offset: 0x2499D7, off: [0x00], on: [0x01]},
-                            ],
-                        },
-                        {
                             name: "No Title Server Encryption",
                             patches: [
                                 {offset: 0x3D4372, off: [0x39], on: [0xC3]},
@@ -167,8 +159,17 @@
                         },
                         {
                             name: "No Title Server TLS",
+                            tooltip: "Title Server Workaround: Disables HTTPS",
                             patches: [
                                 {offset: 0xCE5479, off: [0x81, 0xE3, 0x00, 0x00, 0x80, 0x00], on: [0x31, 0xDB, 0x90, 0x90, 0x90, 0x90]},
+                            ],
+                        },
+                        {
+                            // ikaros14
+                            name: "Dummy LED",
+                            danger: "[DEPRECATED] Skip LED board check",
+                            patches: [
+                                {offset: 0x2499D7, off: [0x00], on: [0x01]},
                             ],
                         }
                     ])
@@ -177,6 +178,6 @@
         </script>
     </head>
     <body>
-        <h1>CHUNITHM CRYSTAL Modder</h1>
+        <h1>CHUNITHM CRYSTAL / CRYSTAL PLUS Modder</h1>
     </body>
 </html>

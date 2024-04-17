@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>CHUNITHM STAR Modder</title>
+        <title>CHUNITHM STAR/STAR PLUS Modder</title>
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/dllpatcher.js"></script>
         <script type="text/javascript">
@@ -43,14 +43,6 @@
                         ],
                     },
                     {
-                        name: "Patch for Windows 7",
-                        tooltip: "May not be able to connect to the server",
-                        patches: [
-                            {offset: 0x18c9250, off: [0x45, 0x78], on: [0x5F, 0x41]},
-                            {offset: 0x18c9259, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
-                        ],
-                    },
-                    {
                         // lybxlpsv STAR
                         name: "Disable Song Select Timer",
                         tooltip: "May only work when playing with card.",
@@ -72,6 +64,13 @@
                         patches: [
                             {offset: 0x3D9D33, off: [0x01], on: [0x00]},
                         ]
+                    },
+                    {
+                        name: "Patch for Windows 7",
+                        danger: "May not be able to connect to the server",
+                        patches: [
+                            {offset: 0x18c9250, off: [0x45, 0x78], on: [0x5F, 0x41]},
+                            {offset: 0x18c9259, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},                        ]
                     }
 				]),
 
@@ -108,12 +107,35 @@
                           {offset: 0xBF4CD1, off: [0x75, 0x3F], on: [0x90, 0x90]},
                       ],
                   },
-                    {
-                        name: "Patch for Windows 7",
-                        tooltip: "May not be able to connect to the server",
-                        patches: [
-                            {offset: 0x18ec270, off: [0x45, 0x78], on: [0x5F, 0x41]},
-                            {offset: 0x18ec279, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
+                  {
+                      // lybxlpsv STARPLUS
+                      name: "Disable Song Select Timer",
+                      tooltip: "May only work when playing with card.",
+                      patches: [
+                          {offset: 0x680652, off: [0x74], on: [0xEB]},
+                      ],
+                  },
+                  {
+                      // esterTion STARPLUS
+                      name: "Set All Timers to 999",
+                      patches: [
+                          {offset: 0x5567E0, off: [0x8B, 0x44, 0x24, 0x04, 0x69, 0xC0, 0xE8, 0x03, 0x00, 0x00], on: [0xB8, 0x58, 0x3E, 0x0F, 0x00, 0x90, 0x90, 0x90, 0x90, 0x90]},
+                      ],
+                  },
+                  {
+                      // lin714093880 & esterTion STARPLUS
+                      name: "Better patch for head-to-head play",
+                      tooltip: "Fix infinite sync while trying to connect to head to head play.",
+                      patches: [
+                          {offset: 0x3D8C43, off: [0x01], on: [0x00]},
+                      ]
+                  },
+                  {
+                      name: "Patch for Windows 7",
+                      danger: "May not be able to connect to the server",
+                      patches: [
+                          {offset: 0x18ec270, off: [0x45, 0x78], on: [0x5F, 0x41]},
+                          {offset: 0x18ec279, off: [0x43, 0x61, 0x6E, 0x63, 0x65, 0x6C, 0x51, 0x75, 0x65, 0x72, 0x79], on: [0x51, 0x75, 0x65, 0x72, 0x79, 0x5F, 0x41, 0x00, 0x00, 0x00, 0x00]},
                         ],
                     },
                   {
@@ -176,6 +198,6 @@
 
     </head>
     <body>
-        <h1>CHUNITHM STAR Modder</h1>
+        <h1>CHUNITHM STAR / STAR PLUS Modder</h1>
     </body>
 </html>

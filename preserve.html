@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <title>Arcade DLL Patching Tools</title>
+        <link rel="icon" href="favicon.ico">
+        <script src="js/script.js"></script><link rel="stylesheet" href="css/style.css">
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                // implement radio-style behaviour for categories
+                for(const input of document.querySelectorAll(".sectionToggle")) {
+                    input.onclick = () => {
+                        for(const el of document.querySelectorAll(".sectionToggle")) {
+                            if(el != input) el.checked = false;
+                        }
+                    }
+                }
+            });
+        </script>
+    </head>
+<body>
+    <div class="video-container">
+            <video autoplay muted Loop id="bgVideo">
+            <source src="https://etude.xinrin.uk/website/bg/budbg.mp4" type="video/mp4">
+            </video>
+        </div>
+    <h1 style="color:black;">Pick a game!|¡Elige Un Juego!|ゲームを選んでください！</h1>          
+    <h1><span style="color:green;">Preserved Game DLL Patching Tools</span></h1>  
+    <p style="text-align:center"><span style="color:black;">Outdated/unneeded patchers. Better ones can be found on the main page. These patchers have been preserved for historical reasons.</span></p>
+    <div class="icons">
+        <label for="check_taiko" class="gameicon">
+            <img src="img/aaa_taiko.png">
+            <div>Taiko no Tatsujin</div>
+        </label>
+        <input type="checkbox" id="check_taiko" class="sectionToggle" />
+        <div class="subsection">
+            <a href="taikonotatsujin.html" class="gameicon">
+                <img src="img/taikonotatsujin.jpg">
+                <div>Taiko no Tatsujin Nijiiro Ver.</div>
+            </a>
+        </div>
+
+        <a href="index.html" class="gameicon">
+            <img src="img/info/back.png">
+            <div>Back</div>
+        </a>
+
+    </div>

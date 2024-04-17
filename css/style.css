@@ -413,7 +413,42 @@ input[type=checkbox]:checked ~ ul > li.patch-on {
 input[type=checkbox]:checked ~ ul > li.patch-off {
     display: list-item;
 }
+body {
+    background: #1d1e1f;
+    color: white;
+}
 
+.gameicon, .patchContainer {
+    background-color: #2e2e2e;
+}
+
+label.gameicon {
+    background: #303025;
+}
+
+.subsection {
+    background-color: #464646;
+}
+
+.success {
+    color: green;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.image-hover {
+    position: absolute;
+    top: 0;
+    left: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+    .image-hover:hover {
+        opacity: 1;
+    }
 #scroll-container {
   border: 0px solid black;
   border-radius: 10px;

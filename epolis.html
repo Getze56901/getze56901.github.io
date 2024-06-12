@@ -1386,7 +1386,151 @@
                     },
                     {
                         name: "fix game audio shitting the bed",
-                        patches: [{ offset: 0x8E21DC, off: [0x01], on: [0x00] }],                    
+                        patches: [{ offset: 0x8E21DC, off: [0x01], on: [0x00] }],
+                    },
+                ]),
+                new Patcher("bm2dx.dll", "2024-06-05", [
+                    {
+                        name: "Premium Free Timer Freeze",
+                        patches: [{ offset: 0x75044D, off: [0x7E], on: [0xEB] }],
+                    },
+                    {
+                        name: "CS-style Song Start Delay",
+                        tooltip: "Holding Start will pause the song at the beginning until you release it",
+                        patches: [{ offset: 0x7CE077, off: [0x7D, 0x36], on: [0x90, 0x90] }],
+                    },
+                    {
+                        name: "Force Custom Timing and Adapter Mode in LDJ (Experimental)",
+                        patches: [
+                            { offset: 0x6CA453, off: [0x75], on: [0xEB] },
+                            { offset: 0x8F5D07, off: [0x74, 0x03], on: [0x90, 0x90] },
+                        ]
+                    },
+                    {
+                        type: "union",
+                        name: "Choose Custom LDJ Timing/Adapter FPS",
+                        offset: 0x8F5AF1,
+                        patches: [
+                            {
+                                name: "60 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0x3C, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0x3C, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name: "120 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0x78, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0x78, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name: "144 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0x90, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0x90, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name: "165 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0xA5, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0xA5, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name: "240 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0xF0, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0xF0, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name: "360 FPS",
+                                patch: [0xC7, 0x45, 0xDB, 0x68, 0x01, 0x00, 0x00, 0xC7, 0x45, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0x45, 0xD7, 0x48, 0x89, 0x45, 0x03, 0xC7, 0x45, 0xD7, 0x01, 0x00, 0x00, 0x00, 0xC7, 0x45, 0xDB, 0x68, 0x01, 0x00, 0x00],
+                            },
+                        ]
+                    },
+                    {
+                        type: "union",
+                        name: "Choose Fullscreen Monitor Check FPS Target",
+                        offset: 0x7F5376,
+                        patches: [
+                            {
+                                name: "60 FPS",
+                                patch: [0x3C, 0x00],
+                            },
+                            {
+                                name: "120 FPS",
+                                patch: [0x78, 0x00],
+                            },
+                            {
+                                name: "144 FPS",
+                                patch: [0x90, 0x00],
+                            },
+                            {
+                                name: "165 FPS",
+                                patch: [0xA5, 0x00],
+                            },
+                            {
+                                name: "240 FPS",
+                                patch: [0xF0, 0x00],
+                            },
+                            {
+                                name: "360 FPS",
+                                patch: [0x68, 0x01],
+                            },
+                        ]
+                    },
+                    {
+                        name: "Quicker Quick Retry",
+                        tooltip: "Shortens duration of the 'stage failed' animation.",
+                        patches: [{ offset: 0x7CD4B5, off: [0x7C, 0x12], on: [0x90, 0x90] }],
+                    },
+                    {
+                        name: "Force TDJ Mode",
+                        patches: [{ offset: 0x8F5EF2, off: [0x02], on: [0x03] }],
+                    },
+                    {
+                        name: "Unlock All Songs and Charts",
+                        patches: [{ offset: 0x2F59E5, off: [0x32, 0xC0], on: [0xB0, 0x01] }],
+                    },
+                    {
+                        name: "Enable ARENA",
+                        patches: [{ offset: 0x7A6F40, off: [0x74, 0x30], on: [0x90, 0x90] }],
+                    },
+                    {
+                        name: "Shorten Monitor Check",
+                        patches: [{ offset: 0x81E6A5, off: [0x8C], on: [0x8D] }],
+                    },
+                    {
+                        type: "union",
+                        name: "Choose Shorten Monitor Check FPS",
+                        offset: 802987,
+                        patches: [
+                            {
+                                name: "Default",
+                                patch: [0x44, 0x8B, 0xCA, 0x4C, 0x8B, 0xD9, 0x41, 0x81, 0xC2, 0x67, 0x01, 0x00, 0x00, 0xB8, 0xB7, 0x60, 0x0B, 0xB6, 0x0F, 0x57],
+                            },
+                            {
+                                name: "60.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x4E, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                            {
+                                name: "120.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                            {
+                                name: "144.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x62, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                            {
+                                name: "165.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0xA0, 0x64, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                            {
+                                name: "240.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x6E, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                            {
+                                name: "360.0000 FPS",
+                                patch: [0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x76, 0x40, 0x66, 0x48, 0x0F, 0x6E, 0xC0, 0xF2, 0x0F, 0x58, 0xC8, 0xC3],
+                            },
+                        ]
+                    },
+                    {
+                        name: "Dark Mode",
+                        patches: [{ offset: 0x9A78FF, off: [0x84, 0xC0], on: [0x90, 0x90] }],
+                    },
+                    {
+                        name: "fix game audio shitting the bed",
+                        patches: [{ offset: 0x92817C, off: [0x01], on: [0x00] }],
                 },
             ]),
             ]);

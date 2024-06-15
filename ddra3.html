@@ -1915,7 +1915,7 @@
                         ]
                     },
                 ]),
-                new Patcher("gamemdx.dll", "2024-04-02", [
+                new Patcher("gamemdx.dll", "2024-04-02, 2024-05-22", [
                     {
                         name: "Force enable fast/slow",
                         patches: [{ offset: 0xE00C0, off: [0x8B, 0x41, 0x44], on: [0x31, 0xC0, 0x40] }],
@@ -2211,7 +2211,7 @@
                 ]),
             ]);
             new PatchContainer([
-                new Patcher("arkmdxp3.dll", "2024-04-02", [
+                new Patcher("arkmdxp3.dll", "2024-04-02, 2024-05-22", [
                     {
                         type: "union",
                         name: "Mode Layout",

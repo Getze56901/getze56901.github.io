@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>DDR WORLD Modder</title>
+<head>
+    <meta charset="utf-8">
+    <title>DDR WORLD DLL Modder</title>
         <link rel="stylesheet" href="css/website.css">
-        <script type="text/javascript" src="js/dllpatcher.js"></script>
-        <script type="text/javascript">
-        window.addEventListener("load", function () {
-            new PatchContainer([
+    <script type="text/javascript" src="js/dllpatcher.js"></script>
+    <script type="text/javascript">
+            window.addEventListener("load", function () {
+                new PatchContainer([
                     new Patcher("gamemdx.dll", "2024-06-13", [
-                    {
-                        name: "Timer Freeze",
-                        patches: [{ offset: 0x2CABE, off: [0x84], on: [0xE9] }],
-                    },
-                    {
-                        name: "Mute Announcer",
-                            { offset: 0x34073, off: [0x84],  on: [0xE9] }],
-                            { offset: 0x261857, off: [0x76], on: [0x62] }],
-                    },
-                    {
-                        name: "Timer Freeze",
-                        patches: [{ offset: 0x2CABE, off: [0x84], on: [0xE9] }],
-                    },
-                    {
-                        name: "Disable Konami Jingle + Skip Konami Logo",
-                            { offset: 0x261970, off: [0x6C],  on: [0x62] }],
-                        ]
-                    }
-				]),
+						{
+                            name: "Mute Announcer",
+                            patches: [
+                                {offset: 0x34073, off: [0x0F,0x84], on: [0x90,0xE9]},
+                                {offset: 0x261857, off: [0x76], on: [0x62]},
+                            ],
+                        },
+						{
+                            name: "Timer Freeze",
+                            patches: [
+                                {offset: 0x2CABE, off: [0x0F,0x84], on: [0x90,0xE9]},
+                            ],
+                        },
+						{
+                            name: "Disable Konami Jingle + Skip Konami Logo",
+                            patches: [
+                                {offset: 0x261970, off: [0x6C], on: [0x62]},
+                            ],
+                        },
+                    ])
                 ]);
             });
+        </script>
+    </script>
     </head>
     <body>
-        <h1>DDR WORLD Modder</h1>
+<!-- HOLA PERSONA CURIOSA, SE QUE ESTAS VIENDO ESTO XDXDXDXD, ASI QUE TE DEJO CON UN CHISTORETE DIGITAL BIEN DE LOS CHAVOS ACA CAMARA CARNAL https://acortar.link/miip -->	
+        <h1>DDR WORLD DLL Modder</h1>
     </body>
 </html>

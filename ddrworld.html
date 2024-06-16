@@ -8,7 +8,7 @@
     <script type="text/javascript">
             window.addEventListener("load", function () {
                 new PatchContainer([
-                    new Patcher("gamemdx.dll", "2024-06-13", [
+                            new Patcher("gamemdx.dll", "2024-06-13", [
 						{
                             name: "Mute Announcer",
                             patches: [
@@ -28,11 +28,60 @@
                                 {offset: 0x261970, off: [0x6C], on: [0x62]},
                             ],
                         },
-                    ])
-                ]);
+						{
+                        type: "number",
+                        name: "Sound Offset",
+                        tooltip: "Bigger numbers make audio later",
+                        offset: 0x22034,
+                        size: 4,
+                        min: 0,
+                        max: 1000,
+						},
+						                    {
+                        name: "Fake PFREE - Force 2nd stage forever with saving",
+                        danger: "Make sure your network supports this before enabling",
+                        tooltip: "Bug: ghost score pacemaker indicator doesn't reload in the same round if a new best is achieved",
+                        patches: [
+                            { offset: 0x2490A, off: [0x01], on: [0x89] },
+                        ]
+                    },
+						
+                    {
+                        type : "union",
+                        name : "Fullscreen FPS Target",
+                        danger: "Experimental: fast animations and menu scrolling",
+                        offset : 0x1876,
+                        patches : [
+                            {
+                                name : "60 FPS",
+                                patch : [0x3C, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "120 FPS",
+                                patch : [0x78, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "144 FPS",
+                                patch : [0x90, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "165 FPS",
+                                patch : [0xA5, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "240 FPS",
+                                patch : [0xF0, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "360 FPS",
+                                patch : [0x68, 0x01, 0x00, 0x00],
+                            },
+                        ]
+                    },
+                ]),
+            ]);
             });
         </script>
-    </script>
     </head>
     <body>
 <!-- HOLA PERSONA CURIOSA, SE QUE ESTAS VIENDO ESTO XDXDXDXD, ASI QUE TE DEJO CON UN CHISTORETE DIGITAL BIEN DE LOS CHAVOS ACA CAMARA CARNAL https://acortar.link/yQ8sak -->	

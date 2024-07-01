@@ -6,7 +6,7 @@
         "type": "memory",
         "patches": [
             {
-                "offset": 3514346,
+                "offset": 1651850,
                 "dllName": "superstep.dll",
                 "dataDisabled": "89430C",
                 "dataEnabled": "909090"
@@ -20,34 +20,16 @@
         "type": "memory",
         "patches": [
             {
-                "offset": 7907752,
+                "offset": 4404952,
                 "dllName": "superstep.dll",
                 "dataDisabled": "74",
                 "dataEnabled": "EB"
             },
             {
-                "offset": 7907800,
+                "offset": 4405000,
                 "dllName": "superstep.dll",
                 "dataDisabled": "00",
                 "dataEnabled": "01"
-            },
-            {
-                "offset": 7913705,
-                "dllName": "superstep.dll",
-                "dataDisabled": "7507",
-                "dataEnabled": "9090"
-            },
-            {
-                "offset": 7913710,
-                "dllName": "superstep.dll",
-                "dataDisabled": "00",
-                "dataEnabled": "03"
-            },
-            {
-                "offset": 9012901,
-                "dllName": "superstep.dll",
-                "dataDisabled": "66",
-                "dataEnabled": "62"
             }
         ]
     }

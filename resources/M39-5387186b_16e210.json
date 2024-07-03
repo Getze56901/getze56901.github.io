@@ -1,0 +1,28 @@
+[
+    {
+        "gameCode": "M39",
+        "version": "2014-06-19",
+        "lastUpdated": "2024-07-02 23:19:38",
+        "source": "https://sp2x.two-torial.xyz/"
+    },
+    {
+        "name": "Coin Unlock",
+        "description": "",
+        "gameCode": "M39",
+        "type": "memory",
+        "patches": [
+            {
+                "offset": 1343225,
+                "dllName": "popn21.dll",
+                "dataDisabled": "00",
+                "dataEnabled": "01"
+            },
+            {
+                "offset": 1343254,
+                "dllName": "popn21.dll",
+                "dataDisabled": "00",
+                "dataEnabled": "01"
+            }
+        ]
+    }
+]

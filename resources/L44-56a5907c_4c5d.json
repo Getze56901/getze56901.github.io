@@ -1,0 +1,22 @@
+[
+    {
+        "gameCode": "L44",
+        "version": "2016-03-27",
+        "lastUpdated": "2024-07-02 23:19:38",
+        "source": "https://sp2x.two-torial.xyz/"
+    },
+    {
+        "name": "Unlock All Songs",
+        "description": "",
+        "gameCode": "L44",
+        "type": "memory",
+        "patches": [
+            {
+                "offset": 9837,
+                "dllName": "music_db.dll",
+                "dataDisabled": "02",
+                "dataEnabled": "1F"
+            }
+        ]
+    }
+]

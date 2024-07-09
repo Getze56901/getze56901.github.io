@@ -1,13 +1,15 @@
+<!-- CANADA ES UN LINDO PAIS, QUIERO IR A JAPON Y REGRESAR A MEXICO SIEMPRE -->	
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>DDR WORLD DLL Modder</title>
-        <link rel="stylesheet" href="css/website.css">
-    <script type="text/javascript" src="js/dllpatcher.js"></script>
+        <link rel="stylesheet" href="./DDR WORLD DLL Modder_files/website.css">
+    <script type="text/javascript" src="./DDR WORLD DLL Modder_files/dllpatcher.js.descarga"></script>
     <script type="text/javascript">
             window.addEventListener("load", function () {
                 new PatchContainer([
+<!-- ADMIN ESCUCHANDO LOVE DE S.E.S. POR ALGUNA RAZON, Y LLORANDO MIENTRAS ARREGLA SU SD DE 3DS -->					
                             new Patcher("gamemdx.dll", "2024-06-13", [
 						{
                             name: "Mute Announcer",
@@ -45,7 +47,7 @@
                             { offset: 0x2490A, off: [0x01], on: [0x89] },
                         ]
                     },
-						
+<!-- TENGO MUCHA HAMBRE MIENTRAS ESCRIBO ESTO, PIENSO EN COMIDA CHINA BASTANTE -->						
                     {
                         type : "union",
                         name : "Fullscreen FPS Target",
@@ -81,6 +83,82 @@
                 ]),
             ]);
             });
+<!-- LA GENTE ES BIEN CHULA, LA GENTE ES BIEN LINDA, LA GENTE ES BIEN LINDA, LA GENTE ES HERMOSA LA GENTE ES HERMOSAAAAA https://acortar.link/TPzznv -->			
+            window.addEventListener("load", function () {
+                new PatchContainer([
+                    new Patcher("gamemdx.dll", "2024-07-04", [
+						{
+                            name: "Mute Announcer",
+                            patches: [
+                                {offset: 0x34403, off: [0x0F,0x84], on: [0x90,0xE9]},
+                                {offset: 0x26747C, off: [0x76], on: [0x62]},
+                            ],
+                        },
+						{
+                            name: "Timer Freeze",
+                            patches: [
+                                {offset: 0x2CF0E, off: [0x0F,0x84], on: [0x90,0xE9]},
+                            ],
+                        },
+						{
+                            name: "Disable Konami Jingle + Skip Konami Logo",
+                            patches: [
+                                {offset: 0x266C00, off: [0x6C], on: [0x62]},
+                            ],
+                        },
+						{
+                        type: "number",
+                        name: "Sound Offset",
+                        tooltip: "Bigger numbers make audio later",
+                        offset: 0x22434,
+                        size: 4,
+                        min: 0,
+                        max: 1000,
+						},
+						                    {
+                        name: "Fake PFREE - Force 2nd stage forever with saving",
+                        danger: "Make sure your network supports this before enabling",
+                        tooltip: "Bug: ghost score pacemaker indicator doesn't reload in the same round if a new best is achieved",
+                        patches: [
+                            { offset: 0x24D0A, off: [0x01], on: [0x89] },
+                        ]
+                    },
+<!-- MI 3DS SE CORROMPIO LA SD EN TIEMPO RECORD WEON, ME SIENTO TRISTE-->							
+                    {
+                        type : "union",
+                        name : "Fullscreen FPS Target",
+                        danger: "Experimental: fast animations and menu scrolling",
+                        offset : 0x1866,
+                        patches : [
+                            {
+                                name : "60 FPS",
+                                patch : [0x3C, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "120 FPS",
+                                patch : [0x78, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "144 FPS",
+                                patch : [0x90, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "165 FPS",
+                                patch : [0xA5, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "240 FPS",
+                                patch : [0xF0, 0x00, 0x00, 0x00],
+                            },
+                            {
+                                name : "360 FPS",
+                                patch : [0x68, 0x01, 0x00, 0x00],
+                            },
+                        ]
+                    },
+                ]),
+            ]);
+            });			
         </script>
     </head>
     <body>
@@ -88,3 +166,4 @@
         <h1>DDR WORLD DLL Modder</h1>
     </body>
 </html>
+<!-- SALUDOS AL DATAPOSTING Y GAMERS HELL Y A SES -->

@@ -1,0 +1,56 @@
+[
+    {
+        "gameCode": "MDX",
+        "version": "2024-04-02 (001)",
+        "lastUpdated": "2024-07-10 19:19:37",
+        "source": "https://sp2x.two-torial.xyz/"
+    },
+    {
+        "name": "Mode Layout",
+        "description": "Changes resolution based on sceen type, among other things",
+        "gameCode": "MDX",
+        "type": "union",
+        "patches": [
+            {
+                "name": "0 - SD",
+                "patch": {
+                    "dllName": "arkmdxp3.dll",
+                    "data": "00",
+                    "offset": 437572
+                }
+            },
+            {
+                "name": "1 - SD",
+                "patch": {
+                    "dllName": "arkmdxp3.dll",
+                    "data": "01",
+                    "offset": 437572
+                }
+            },
+            {
+                "name": "2 - HD (Default)",
+                "patch": {
+                    "dllName": "arkmdxp3.dll",
+                    "data": "02",
+                    "offset": 437572
+                }
+            },
+            {
+                "name": "3 - HD",
+                "patch": {
+                    "dllName": "arkmdxp3.dll",
+                    "data": "03",
+                    "offset": 437572
+                }
+            },
+            {
+                "name": "4 - HD (Gold)",
+                "patch": {
+                    "dllName": "arkmdxp3.dll",
+                    "data": "04",
+                    "offset": 437572
+                }
+            }
+        ]
+    }
+]

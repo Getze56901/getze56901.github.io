@@ -1,0 +1,22 @@
+[
+    {
+        "gameCode": "M32",
+        "version": "2018-07-17",
+        "lastUpdated": "2024-07-04 22:33:47",
+        "source": "https://sp2x.two-torial.xyz/"
+    },
+    {
+        "name": "Fix IP change error",
+        "description": "",
+        "gameCode": "M32",
+        "type": "memory",
+        "patches": [
+            {
+                "offset": 144245,
+                "dllName": "libshare-pj.dll",
+                "dataDisabled": "74",
+                "dataEnabled": "EB"
+            }
+        ]
+    }
+]

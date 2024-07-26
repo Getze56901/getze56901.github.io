@@ -1,0 +1,22 @@
+[
+    {
+        "gameCode": "J44",
+        "version": "2011-01-14",
+        "lastUpdated": "2024-07-02 23:19:38",
+        "source": "https://sp2x.two-torial.xyz/"
+    },
+    {
+        "name": "SELECT MUSIC Timer Lock",
+        "description": "",
+        "gameCode": "J44",
+        "type": "memory",
+        "patches": [
+            {
+                "offset": 546772,
+                "dllName": "jubeat.dll",
+                "dataDisabled": "75",
+                "dataEnabled": "EB"
+            }
+        ]
+    }
+]

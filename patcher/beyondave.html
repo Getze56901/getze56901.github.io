@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jubeat beyond the Ave. DLL Modder</title>
+  <link rel="stylesheet" href="css/website.css" />
+  <script type="text/javascript" src="js/dllpatcher.js"></script>
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+      new PatchContainer([
+        new Patcher("jubeat.dll", "2023-09-20", [
+          {
+            name: "Skip Tutorial",
+            patches: [
+              { offset: 0xd553f, off: [0x0f, 0x85], on: [0x90, 0xe9] },
+            ],
+          },
+          {
+            name: "Select Music Timer Freeze",
+            patches: [{ offset: 0xbef65, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Category Select",
+            patches: [{ offset: 0xbf2ea, off: [0x04], on: [0x07] }],
+          },
+          {
+            name: "Result Timer Freeze",
+            tooltip: "Counts down to 0 then stops",
+            patches: [{ offset: 0xa6b1b, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Online Matching",
+            patches: [
+              { offset: 0xd15ff, off: [0x0f, 0x84], on: [0x90, 0xe9] },
+            ],
+          },
+          {
+            name: "Force Unlock All Markers",
+            patches: [
+              { offset: 0x16480b, off: [0x75], on: [0xeb] },
+              { offset: 0x1adae0, off: [0x75], on: [0xeb] },
+              {
+                offset: 0x1addca,
+                off: [0x0f, 0xb7, 0x45, 0xb0],
+                on: [0x31, 0xc0, 0x90, 0x90],
+              },
+            ],
+          },
+          {
+            name: "Force Unlock All Backgrounds",
+            patches: [
+              { offset: 0x13666e, off: [0x75], on: [0xeb] },
+              {
+                offset: 0x13694b,
+                off: [0x0f, 0xb7, 0x45, 0xb0],
+                on: [0x31, 0xc0, 0x90, 0x90],
+              },
+              { offset: 0x1648be, off: [0x75], on: [0xeb] },
+            ],
+          },
+          {
+            name: "Force Enable Expert Option",
+            patches: [
+              {
+                offset: 0xda920,
+                off: [0x55, 0x8b, 0xec],
+                on: [0xb0, 0x01, 0xc3],
+              },
+            ],
+          },
+          {
+            type: "union",
+            name: "Default Marker For Guest Play",
+            offset: 0x5b357,
+            patches: [
+              { name: "Default", patch: [0x31] },
+              { name: "Festo", patch: [0x2e] },
+              { name: "Qubell", patch: [0x28] },
+              { name: "Shutter", patch: [0x04] },
+            ],
+          },
+        ]),
+        new Patcher("jubeat.dll", "2023-11-20", [
+          {
+            name: "Skip Tutorial",
+            patches: [
+              { offset: 0xd795f, off: [0x0f, 0x85], on: [0x90, 0xe9] },
+            ],
+          },
+          {
+            name: "Select Music Timer Freeze",
+            patches: [{ offset: 0xc0e7f, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Category Select",
+            patches: [{ offset: 0xc120b, off: [0x04], on: [0x07] }],
+          },
+          {
+            name: "Result Timer Freeze",
+            tooltip: "Counts down to 0 then stops",
+            patches: [{ offset: 0xa88fb, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Online Matching",
+            patches: [
+              { offset: 0xd3a1f, off: [0x0f, 0x84], on: [0x90, 0xe9] },
+            ],
+          },
+        ]),
+        new Patcher("jubeat.dll", "2023-12-19", [
+          {
+            name: "Skip Tutorial",
+            patches: [
+              { offset: 0xD7B2F, off: [0x0f, 0x85], on: [0x90, 0xe9] },
+            ],
+          },
+          {
+            name: "Select Music Timer Freeze",
+            patches: [{ offset: 0xC102F, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Category Select",
+            patches: [{ offset: 0xC13BB, off: [0x04], on: [0x07] }],
+          },
+          {
+            name: "Result Timer Freeze",
+            tooltip: "Counts down to 0 then stops",
+            patches: [{ offset: 0xA8ABB, off: [0x75], on: [0xeb] }],
+          },
+          {
+            name: "Skip Online Matching",
+            patches: [
+              { offset: 0xD3BEF, off: [0x0f, 0x84], on: [0x90, 0xe9] },
+            ],
+          },
+        ]),
+        new Patcher("jubeat.dll", "2024-06-05", [
+          {
+            name: "Skip Tutorial",
+            patches: [{ offset: 0xD813F, off: [0x0F, 0x85], on: [0x90, 0xE9] }],
+          },
+          {
+            name: "Select Music Timer Freeze",
+            patches: [{ offset: 0xC165F, off: [0x75], on: [0xEB] }],
+          },
+          {
+            name: "Skip Category Select",
+            patches: [{ offset: 0xC19EB, off: [0x04], on: [0x07] }],
+          },
+          {
+            name: "Result Timer Freeze",
+            tooltip: "Counts down to 0 then stops",
+            patches: [{ offset: 0xA903B, off: [0x75], on: [0xEB] }],
+          },
+          {
+            name: "Skip Online Matching",
+            patches: [{ offset: 0xD41FF, off: [0x0F, 0x84], on: [0x90, 0xE9] }],
+          },
+          {
+            name: "Force Unlock All Markers",
+            patches: [
+              { offset: 0x4, off: [0x03], on: [0xEB] },
+              { offset: 0x1B1CA0, off: [0x75], on: [0xEB] },
+              { offset: 0x1B1F8A, off: [0x0F, 0xB7, 0x45, 0xB0], on: [0x31, 0xC0, 0x90, 0x90] },
+            ]
+          },
+          {
+            name: "Force Unlock All Backgrounds",
+            patches: [
+              { offset: 0x139B1E, off: [0x75], on: [0xEB] },
+              { offset: 0x139DFB, off: [0x0F, 0xB7, 0x45, 0xB0], on: [0x31, 0xC0, 0x90, 0x90] },
+              { offset: 0x167DBD, off: [0x75], on: [0xEB] },
+            ]
+          },
+          {
+            name: "Force Enable Expert Option",
+            patches: [{ offset: 0xDCF30, off: [0x55, 0x8B, 0xEC], on: [0xB0, 0x01, 0xC3] }],
+          },
+          {
+            type: "union",
+            name: "Default Marker For Guest Play",
+            offset: 0x5D117,
+            patches: [
+              {
+                name: "Default",
+                patch: [0x31],
+              },
+              {
+                name: "Festo",
+                patch: [0x2E],
+              },
+              {
+                name: "Qubell",
+                patch: [0x28],
+              },
+              {
+                name: "Shutter",
+                patch: [0x04]
+              }],
+          },
+        ]),
+      ]),
+        new PatchContainer([
+          new Patcher("music_db.dll", "2023-09-20", [
+            {
+              name: "Unlock all songs",
+              patches: [
+                { offset: 0x1ee5, off: [0x74, 0x0a], on: [0x90, 0x90] },
+              ],
+            },
+          ]),
+          new Patcher("music_db.dll", "2023-11-20, 2023-12-19", [
+            {
+              name: "Unlock all songs",
+              patches: [
+                { offset: 0x2135, off: [0x74, 0x0a], on: [0x90, 0x90] },
+              ],
+            },
+          ]),
+        ]);
+    });
+  </script>
+</head>
+
+<body>
+  <h1>jubeat Ave. DLL Modder</h1>
+</body>
+</html>
